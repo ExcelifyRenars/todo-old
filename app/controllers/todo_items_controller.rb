@@ -22,6 +22,11 @@ class TodoItemsController < ApplicationController
     redirect_to @todo_list, notice: "Item completed"
   end
 
+  def uncomplete
+    @todo_item.update_attribute(:completed_at, nil)
+    redirect_to @todo_list, notice: "Item completed"
+  end
+
   private
 
   def set_todo_list
