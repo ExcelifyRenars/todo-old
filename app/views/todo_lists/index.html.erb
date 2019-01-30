@@ -15,7 +15,7 @@
   </thead>
 
   <tbody>
-    <% @todo_lists.each do |todo_list| %>
+    <% @todo_lists.order(:id).each do |todo_list| %>
       <tr>
         <td id=lists_title><%= todo_list.title %></td>
         <td id=lists_desc><%= todo_list.description %></td>
