@@ -63,7 +63,7 @@ body {
 	padding: 1em 1em;
 }
 
-.todo_list_title {
+.affliate_title {
 	margin: 0 0 1em 0;
 	text-align: center;
 	font-size: 2em;
@@ -71,7 +71,7 @@ body {
 	font-weight: 400;
 }
 
-.todo_list_sub_title {
+.affliate_sub_title {
 	margin: 0 0 3em 0;
 	text-align: center;
 	font-size: 1.3em;
@@ -87,22 +87,26 @@ body {
 	}
 }
 
-#todo_lists_table{
+#affiliates_table{
 	width: 100%;
-
-	#lists_title{
-		text-align: center;
-	}
-
-	#lists_desc{
-		text-align: center;
-	}
-	#lists_progress{
-		text-align: center;
+	text-align: center;
+}
+#affiliate_details_table{
+	width: 30%;
+	float: right;
+	text-align: right;
+	#af_detail{
+		padding-left: 1em;
+		text-align: left;
 	}
 }
+#af_clients_table{
+	width: 70%;
+	float: left;
+	text-align: center;
+}
 
-#todo_items_wrapper {
+#af_clients_wrapper {
 	.row {
 		width: 100%;
 		border-top: 1px solid rgba(250,250,250, .3);
@@ -113,6 +117,9 @@ body {
 			text-align: center;
 			border-right: 1px solid rgba(250,250,250, .3);
 			padding: 1em 0;
+		}
+		.client_domain{
+			width: 25%
 		}
 		.todo_item {
 			width: 90%;
@@ -131,6 +138,13 @@ body {
 			border-left: 1px solid rgba(250,250,250, .3);
 			padding: 1em 0;
 		}
+		.edit {
+			width: 3%;
+			float: left;
+			text-align: center;
+			border-left: 1px solid rgba(250,250,250, .3);
+			padding: 1em 0;
+		}
 		i {
 			color: white;
 			transition: all .4s ease-in-out;
@@ -139,36 +153,38 @@ body {
 			}
 		}
 	}
-	#form {
-		margin-top: 2em;
-		padding: 0 5%;
-		input[type="text"] {
-			width: 72%;
-			margin-right: 2%;
-			display: inline-block;
-			outline: none;
-			background: rgba(250,250,250,.4);
-			border: none;
-			height: 40px;
-			border-radius: 4px;
-			padding: 1em 2em;
-		}
-		input[type="submit"] {
-			background: rgba(250,250,250,.4);
-			outline: none;
-			border: none;
-			height: 40px;
-			border-radius: 4px;
-			width: 25%;
-			display: inline-block;
-			transition: all .4s ease-in-out;
-			cursor: pointer;
-			&:hover {
-				background: $dark;
-			}
-		}
-		::-webkit-input-placeholder { color: $dark; }
+}
+
+#add_client_form {
+	margin-top: 2em;
+	padding: 0 5%;
+	width: 70%;
+	input[type="text"] {
+		width: 72%;
+		margin-right: 2%;
+		display: inline-block;
+		outline: none;
+		background: rgba(250,250,250,.4);
+		border: none;
+		height: 40px;
+		border-radius: 4px;
+		padding: 1em 2em;
 	}
+	input[type="submit"] {
+		background: rgba(250,250,250,.4);
+		outline: none;
+		border: none;
+		height: 40px;
+		border-radius: 4px;
+		width: 25%;
+		display: inline-block;
+		transition: all .4s ease-in-out;
+		cursor: pointer;
+		&:hover {
+			background: $dark;
+		}
+	}
+	::-webkit-input-placeholder { color: $dark; }
 }
 
 .links {

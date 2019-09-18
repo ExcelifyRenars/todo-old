@@ -1,30 +1,36 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_list
-  before_action :set_todo_item, except: [:create]
+  before_action :set_todo_item, only: [:show, :edit, :update, :destroy]
+
+  # GET /todo_lists/1/todo_items/4/edit
+  def edit
+  end
 
   def create
     @todo_item = @todo_list.todo_items.create(todo_item_params)
     redirect_to @todo_list
   end
 
+  def update
+    respond_to do |format|
+      if @todo_item.update(todo_item_params)
+        format.html { redirect_to @todo_item, notice: "#{@todo_item.content} - updated." }
+        format.json { render :show, status: :ok, location: @todo_item }
+      else
+        format.html { render :edit }
+        format.json { render json: @todo_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @todo_item = @todo_list.todo_items.find(params[:id])
     if @todo_item.destroy
-      flash[:success] = "Item was deleted."
+      flash[:success] = "Client was removed."
     else
-      flash[:error] = "Item could not be deleted."
+      flash[:error] = "Error - could not remove client."
     end
     redirect_to @todo_list
-  end
-
-  def complete
-    @todo_item.update_attribute(:completed_at, Time.now)
-    redirect_to @todo_list, notice: "Item completed"
-  end
-
-  def uncomplete
-    @todo_item.update_attribute(:completed_at, nil)
-    redirect_to @todo_list, notice: "Item completed"
   end
 
   private

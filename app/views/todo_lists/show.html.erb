@@ -1,12 +1,82 @@
 <p id="notice"><%= notice %></p>
-<h2 class="todo_list_title"><%= @todo_list.title %></h2>
-<p class="todo_list_sub_title"><%= @todo_list.description %></p>
-<div id="todo_items_wrapper">
+<h2 class="affliate_title"><%= @todo_list.title %></h2>
+<p class="affliate_sub_title">Name - <%= @todo_list.title %> - Status</p>
+
+<table id=af_clients_table>
+  <thead>
+    <tr>
+      <th>Store Domain</th>
+      <th>Date Added</th>
+      <th>Date First Paid</th>
+      <th>Date Last Paid</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @todo_list.todo_items.order(:id).each do |todo_items| %>
+      <tr>
+        <td id=af_cl_domain><%= todo_items.content %></td>
+        <td id=af_cl_created_at><%= todo_items.created_at %></td>
+        <td id=af_cl_first_paid><%= todo_items.updated_at %></td>
+        <td id=af_cl_last_paid><%= todo_items.updated_at %></td>
+        <td class="edit"><%= link_to edit_todo_list_todo_item_path(@todo_list, todo_items.id) do %>
+          <i class="fa fa-edit"></i>
+        <% end %></td>
+        <td class="trash"><%= link_to todo_list_todo_item_path(@todo_list, todo_items.id), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fa fa-trash"></i>
+        <% end %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table id=affiliate_details_table>
+    <tr>
+      <th>Website</th>
+      <td id=af_detail><%= @todo_list.title %></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+        <td id=af_detail><%= @todo_list.title %></td>
+    </tr>
+    <tr>
+      <th>Location</th>
+        <td id=af_detail><%= @todo_list.title %></td>
+    </tr>
+    <tr>
+      <th>Percent</th>
+        <td id=af_detail><%= @todo_list.title %></td>
+    </tr>
+    <tr>
+      <th>PayPal Email</th>
+        <td id=af_detail><%= @todo_list.title %></td>
+    </tr>
+    <tr>
+      <th>Since date</th>
+        <td id=af_detail><%= @todo_list.created_at %></td>
+    </tr>
+    <tr>
+      <th>Status</th>
+        <td id=af_detail><%= @todo_list.count_completed_items %>/<%= @todo_list.count_total_items %></td>
+    </tr>
+    <tr>
+      <th>Notes</th>
+        <td id=af_detail><%= @todo_list.description %></td>
+    </tr>
+</table>
+
+<div id="add_client_form">
+  <%= render "todo_items/form" %>
+</div>
+
+<!--<div id="af_clients_wrapper">
   <%= render @todo_list.todo_items.order(:id) %>
   <div id="form">
     <%= render "todo_items/form" %>
   </div>
-</div>
+</div>-->
+
 <div class="links">
   <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
   <%= link_to 'Delete', todo_list_path(@todo_list), method: :delete, data: { confirm: "Are you sure?" } %> |

@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<div class="page_title"><h1>Current Lists</h1></div>
+<div class="page_title"><h1>Affiliates</h1></div>
 
-<div class="add_list"><%= link_to 'New Todo List', new_todo_list_path %></div>
+<div class="add_list"><%= link_to 'Add Affiliate', new_todo_list_path %></div>
 
-<table id=todo_lists_table>
+<table id=affiliates_table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Progress</th>
+      <th>Affiliate</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,9 +18,10 @@
   <tbody>
     <% @todo_lists.order(:id).each do |todo_list| %>
       <tr>
-        <td id=lists_title><%= todo_list.title %></td>
-        <td id=lists_desc><%= todo_list.description %></td>
-        <td id=lists_progress><%= todo_list.count_completed_items %>/<%= todo_list.count_total_items %></td>
+        <td id=af_title><%= todo_list.title %></td>
+        <td id=af_name><%= todo_list.title %></td>
+        <td id=af_email><%= todo_list.title %></td>
+        <td id=af_status><%= todo_list.count_completed_items %>/<%= todo_list.count_total_items %></td>
         <td><%= link_to 'Show', todo_list %></td>
         <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
         <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,5 +29,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
