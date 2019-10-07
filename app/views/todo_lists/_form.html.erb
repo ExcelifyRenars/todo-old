@@ -11,47 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <div class="affiliate_form">
+    <div class="details_edit">
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+      </div>
+      <div class="field">
+        <%= form.label :website %>
+        <%= form.text_field :website %>
+      </div>
+      <div class="field">
+        <%= form.label :email %>
+        <%= form.text_field :email %>
+      </div>
+      <div class="field">
+        <%= form.label :location %>
+        <%= form.text_field :location %>
+      </div>
+      <div class="field">
+        <%= form.label :percentage %>
+        <%= form.text_field :percentage %>
+      </div>
+      <div class="field">
+        <%= form.label :paypal_email %>
+        <%= form.text_field :paypal_email %>
+      </div>
+      <div class="field">
+        <%= form.label :status %>
+        <%= form.text_field :status %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :website %>
-    <%= form.text_field :website %>
-  </div>
+    <div class="details_desc">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :percentage %>
-    <%= form.text_field :percentage %>
-  </div>
-
-  <div class="field">
-    <%= form.label :paypal_email %>
-    <%= form.text_field :paypal_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <div class="actions">
+      <%= link_to 'Cancel', todo_lists_path %>
+    </div>
   </div>
 <% end %>

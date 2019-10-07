@@ -40,14 +40,32 @@ td {
   padding: 0 5px 7px;
 }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
-
 #notice {
   color: green;
+}
+
+.forms {
+	padding: 0 5%;
+  width: 100%;
+  display: inline-block;
+
+  .details_edit{
+	  width: 30%;
+	  float: left;
+  }
+  .details_desc{
+    width: 60%;
+	  float: right;
+  }
+  .actions{
+    width: 100%;
+    align-items: center;
+    display: inline-block;
+  }
+
+  .field{
+    
+  }
 }
 
 .field_with_errors {
