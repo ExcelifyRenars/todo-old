@@ -20,8 +20,8 @@
       <tr>
         <td id=af_title><%= todo_list.title %></td>
         <td id=af_name><%= todo_list.title %></td>
-        <td id=af_email><%= todo_list.title %></td>
-        <td id=af_status><%= todo_list.count_completed_items %>/<%= todo_list.count_total_items %></td>
+        <td id=af_email><%= todo_list.email %></td>
+        <td id=af_status><%= todo_list.status %></td>
         <td><%= link_to 'Show', todo_list %></td>
         <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
         <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>

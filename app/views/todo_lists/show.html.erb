@@ -18,8 +18,8 @@
       <tr>
         <td id=af_cl_domain><%= todo_items.content %></td>
         <td id=af_cl_created_at><%= todo_items.created_at %></td>
-        <td id=af_cl_first_paid><%= todo_items.updated_at %></td>
-        <td id=af_cl_last_paid><%= todo_items.updated_at %></td>
+        <td id=af_cl_first_paid><%= todo_items.first_paid_at %></td>
+        <td id=af_cl_last_paid><%= todo_items.last_paid_at %></td>
         <td class="edit"><%= link_to edit_todo_list_todo_item_path(@todo_list, todo_items.id) do %>
           <i class="fa fa-edit"></i>
         <% end %></td>
@@ -34,23 +34,23 @@
 <table id=affiliate_details_table>
     <tr>
       <th>Website</th>
-      <td id=af_detail><%= @todo_list.title %></td>
+      <td id=af_detail><%= @todo_list.website %></td>
     </tr>
     <tr>
       <th>Email</th>
-        <td id=af_detail><%= @todo_list.title %></td>
+        <td id=af_detail><%= @todo_list.email %></td>
     </tr>
     <tr>
       <th>Location</th>
-        <td id=af_detail><%= @todo_list.title %></td>
+        <td id=af_detail><%= @todo_list.location %></td>
     </tr>
     <tr>
       <th>Percent</th>
-        <td id=af_detail><%= @todo_list.title %></td>
+        <td id=af_detail><%= @todo_list.percentage %></td>
     </tr>
     <tr>
       <th>PayPal Email</th>
-        <td id=af_detail><%= @todo_list.title %></td>
+        <td id=af_detail><%= @todo_list.paypal_email %></td>
     </tr>
     <tr>
       <th>Since date</th>
@@ -58,7 +58,7 @@
     </tr>
     <tr>
       <th>Status</th>
-        <td id=af_detail><%= @todo_list.count_completed_items %>/<%= @todo_list.count_total_items %></td>
+        <td id=af_detail><%= @todo_list.status %></td>
     </tr>
     <tr>
       <th>Notes</th>
