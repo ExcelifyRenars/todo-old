@@ -5,8 +5,8 @@ development:
   encoding: unicode
   database: todo_development
   pool: 5
-  username:
-  password:
+  username: renars
+  password: qwerty
   timeout: 5000
 test:
   adapter: postgresql
