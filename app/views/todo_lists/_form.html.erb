@@ -39,7 +39,7 @@
       </div>
       <div class="field">
         <%= form.label :status %>
-        <%= form.text_field :status %>
+        <%= form.select( "status", ["Active", "Out", "Pending", "Writer", "Archived"]) %>
       </div>
     </div>
 
