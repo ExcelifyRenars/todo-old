@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_07_141346) do
+ActiveRecord::Schema.define(version: 2019_10_10_114343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_10_07_141346) do
     t.datetime "updated_at", null: false
     t.datetime "first_paid_at"
     t.datetime "last_paid_at"
+    t.datetime "date_added"
     t.index ["todo_list_id"], name: "index_todo_items_on_todo_list_id"
   end
 
