@@ -213,17 +213,50 @@ input[type="text"], textarea, select {
 	padding-right: 2em;
 	padding-left: 2em;
 }
+input[type="date"]{
+	width: 100%;
+	margin: .5em 2% 1em 0;
+	display: inline-block;
+	outline: none;
+	background: rgba(250,250,250,.4);
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	padding-right: 2em;
+	padding-left: 2em;
+}
 textarea {
 	height: 200px;
 }
-input[type="submit"] {
+
+.actions{
+	text-align: center;
+	display: inline-block;
+}
+
+input[type="submit"]{
 	background: white;
 	outline: none;
 	border: none;
 	height: 40px;
 	border-radius: 4px;
-	width: 25%;
-	display: inline-block;
+	width: 100%;
+	transition: all .4s ease-in-out;
+	cursor: pointer;
+	color: $dark;
+	&:hover {
+		background: $dark;
+		color: white;
+	}
+}
+
+#submit, #cancel{
+	background: white;
+	outline: none;
+	border: none;
+	height: 40px;
+	border-radius: 4px;
+	width: 20%;
 	transition: all .4s ease-in-out;
 	cursor: pointer;
 	color: $dark;

@@ -1,0 +1,26 @@
+<%#= form_for([@todo_list, @todo_list.todo_items.build]) do |f| %>
+<%= form_with(model: todo_items, local: true) do |f| %>
+
+
+  <div class="affiliate_form">
+    <div class="details_edit">
+      <div class="field">
+        <%= f.label :content %>
+        <%= f.text_field :content, value: @todo_item.content %>
+      </div>
+      <div class="field">
+        <%= f.label :date_added %>
+        <%= f.date_field :date_added, value: @todo_item.date_added %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div id="submit">
+        <%= f.submit %>
+      </div>
+      <div id="cancel">
+        <%= f.submit 'Cancel', :name => 'cancel' %>
+      </div>
+    </div>
+  </div>
+<% end %>

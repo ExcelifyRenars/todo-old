@@ -17,10 +17,10 @@
     <% @todo_list.todo_items.order(:id).each do |todo_items| %>
       <tr>
         <td id=af_cl_domain><%= todo_items.content %></td>
-        <td id=af_cl_created_at><%= todo_items.created_at %></td>
+        <td id=af_cl_created_at><%= todo_items.date_added %></td>
         <td id=af_cl_first_paid><%= todo_items.first_paid_at %></td>
         <td id=af_cl_last_paid><%= todo_items.last_paid_at %></td>
-        <td class="edit"><%= link_to edit_todo_list_todo_item_path(@todo_list, todo_items.id) do %>
+        <td class="edit"><%= link_to todo_list_todo_item_path(@todo_list, todo_items.id) do %>
           <i class="fa fa-edit"></i>
         <% end %></td>
         <td class="trash"><%= link_to todo_list_todo_item_path(@todo_list, todo_items.id), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -67,13 +67,14 @@
 </table>
 
 <div id="add_client_form">
-  <%= render "todo_items/form" %>
+  <%= render "todo_items/form_add" %>
 </div>
+
 
 <!--<div id="af_clients_wrapper">
   <%= render @todo_list.todo_items.order(:id) %>
   <div id="form">
-    <%= render "todo_items/form" %>
+    <%= render "todo_items/form_add" %>
   </div>
 </div>-->
 
